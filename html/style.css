@@ -1,0 +1,195 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Trebuchet MS', sans-serif;
+  background: #f4f6f5;
+  color: #111;
+}
+
+/* HERO */
+.hero {
+  height: 100vh;
+  background: linear-gradient(
+      rgba(0,0,0,0.35),
+      rgba(0,0,0,0.7)
+    ),
+    url("hero.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  animation: heroFade 2s ease-in;
+}
+
+@keyframes heroFade {
+  from { opacity: 0; transform: scale(1.05); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.hero-content {
+  text-align: center;
+  padding: 60px;
+  color: #fff;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  letter-spacing: 2px;
+}
+
+.hero p {
+  margin: 15px 0 30px;
+  font-size: 1.1rem;
+}
+
+.hero-buttons .btn {
+  padding: 12px 25px;
+  background: #ffffffdd;
+  color: #000;
+  text-decoration: none;
+  margin: 0 10px;
+  border-radius: 30px;
+}
+
+.hero-buttons .outline {
+  background: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+/* BENTO GRID */
+.bento {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 60px;
+  position: relative;
+}
+
+.bento-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  height: 220px;
+}
+
+.bento-item.wide {
+  grid-column: span 2;
+}
+
+.bento-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.4s ease;
+}
+
+.bento-item span {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: white;
+  font-size: 1.4rem;
+  z-index: 2;
+}
+
+/* VARNISH + GLOW */
+.bento-item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(0,0,0,0.2),
+    rgba(0,0,0,0.6)
+  );
+}
+
+.bento-item:hover img {
+  transform: scale(1.08);
+}
+
+/* DARKEN OTHERS ON HOVER */
+.bento:hover .bento-item {
+  opacity: 0.3;
+}
+
+.bento .bento-item:hover {
+  opacity: 1;
+  box-shadow: 0 0 30px rgba(255,255,255,0.4);
+}
+
+/* FOOTER */
+footer {
+  padding: 40px;
+  text-align: center;
+}
+
+.socials a {
+  margin: 0 10px;
+  color: #555;
+  text-decoration: none;
+}
+/* PAGE HERO */
+.page-hero {
+  padding: 120px 40px 80px;
+  text-align: center;
+  background: linear-gradient(
+    rgba(0,0,0,0.6),
+    rgba(0,0,0,0.6)
+  ),
+  url("../images/classes.jpg") center/cover no-repeat;
+  color: white;
+}
+
+.page-hero h1 {
+  font-size: 2.5rem;
+}
+
+.page-hero p {
+  margin-top: 15px;
+  font-size: 1.1rem;
+}
+
+/* BLOG SECTION */
+.blog-container {
+  padding: 60px;
+  display: grid;
+  gap: 40px;
+}
+
+.blog-post {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 30px;
+  align-items: center;
+}
+
+.blog-post img {
+  width: 100%;
+  border-radius: 20px;
+}
+
+.blog-content h2 {
+  font-size: 1.8rem;
+}
+
+.blog-content .meta {
+  font-size: 0.9rem;
+  color: #777;
+  margin: 10px 0;
+}
+
+/* CONTACT CTA */
+.contact-cta {
+  background: #eef3f1;
+  text-align: center;
+  padding: 80px 40px;
+}
+
+.cta-buttons {
+  margin-top: 30px;
+}
